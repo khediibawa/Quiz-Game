@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int done[25];
+
 
 /*---------------------------------
  * Functions Declaration 
@@ -9,22 +10,17 @@ int done[25];
  */
 
 void welcome();
+void menu();
 void startGame();
 void rules();
-void highScores();
-void quit();
 
 
 /*----------------------------------
  * Main method
  *----------------------------------
  */
- 
-int main(int argc, char const *argv[]) {
-    //initialise done to 0
-    for(int i = 0; i < 10; i++) {
-        done[i] = 0;
-    }
+
+int main() {
     welcome();
     return 0;
 }
@@ -38,68 +34,25 @@ int main(int argc, char const *argv[]) {
 
 void welcome() {
 	char name;
+	printf("\n*******************************************************************************");
 	printf("\n\n\t\t\t\t   WELCOME \t\t\t");
 	printf("\n\n\t\t\t\t     TO \t\t\t");
 	printf("\n\n\t\t\tWHO WANTS TO BE A MILLIONAIRE\t\t\t");
-	
+	printf("\n\n********************************************************************************\n");
 	printf("\n\n\n\n\n\n\n\n\n\n\n  ENTER YOUR NAME  :  ");
-	scanf("%c",&name); //saves name
-	
-	printf("\n\n\n\n\n\n\n\t1. START GAME\t\n");
-	printf("\n\t2. RULES\t\n");
-	printf("\n\t3. HIGHSCORE\t\n");
-	printf("\n\t4. QUIT\t\n");
-	
-	int choice; //variable i to select one of the four choices above
-	scanf("%d",&choice);
-	switch(choice) {
-		case 1:
-			startGame();
-			break;
-			
-		case 2:
-			rules();
-			break;
-		
-		case 3:
-			highScores();
-			break;
-			
-		case 4:
-			quit();
-			break;
-	}
+	scanf("%c", &name); //saves name
+	menu();
 }
 
-/*--------------------------------
- * choice 1 = starts the game
- *--------------------------------
- */
- 
+
+void menu() {
+
+}
+
 void startGame() {
-	
+		
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void rules() {
+	
+}
