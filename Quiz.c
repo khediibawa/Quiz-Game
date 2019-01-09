@@ -46,7 +46,33 @@ void welcome() {
 
 
 void menu() {
+	system("CLS"); //clears the screen
 
+	printf("\n\n\n\n\t1. START GAME\t\n"); 
+	printf("\n\t2.RULES\t\n");
+	printf("\n\t3. QUIT\t\n");
+	
+	printf("\n\n\n\n\n\nEnter your choice : ");
+	short int choice; //variable to select one of the three choices above
+	scanf("%hd", &choice);
+	
+	switch(choice) {
+		case 1:
+			startGame();
+			break;
+			
+		case 2:
+			rules();
+			break;
+		
+		case 3:
+			system("cls");
+			return;
+			break;
+		
+		default :
+			menu(); //switch case will keep on opening the menu page until the user puts a valid input
+	}
 }
 
 void startGame() {
