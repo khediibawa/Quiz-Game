@@ -2,10 +2,6 @@
 
 A Quiz game based in C Language.
 
-## Game Features
-
-* 10 questions in total to earn million dollars.
-*
 
 ## How to Play
 1. Start the game.
