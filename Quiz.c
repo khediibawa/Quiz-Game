@@ -34,12 +34,19 @@ int main() {
 
 void welcome() {
 	char name;
-	printf("\n*******************************************************************************");
-	printf("\n\n\t\t\t\t   WELCOME \t\t\t");
+	printf("\t\t__________________________________________\n");
+	printf("\t\t__________________________________________\n");
+	printf("\n\t\t\t\t   WELCOME \t\t\t");
 	printf("\n\n\t\t\t\t     TO \t\t\t");
-	printf("\n\n\t\t\tWHO WANTS TO BE A MILLIONAIRE\t\t\t");
-	printf("\n\n********************************************************************************\n");
+	printf("\n\n\t\t\t\tTHE QUIZ GAME\t\t\t");
+	printf("\n\t\t___________________________________________\n");
+	printf("\t\t___________________________________________\n");
+	
+	printf("\n\n\t\t\tWHO WANTS TO BE A MILLIONAIRE\n");
+	printf("\t\t___________________________________________\n");
+	
 	printf("\n\n\n\n\n\n\n\n\n\n\n  ENTER YOUR NAME  :  ");
+	
 	scanf("%c", &name); //saves name
 	menu();
 }
@@ -100,7 +107,7 @@ void startGame() {
 				printf("\n\n\n Which is the longest River in the world?");
 				printf("\n\n  A.Nile\t\tB.Koshi\n\n  C.Ganga\t\tD.Amazon\n\n");
 		
-				if (toupper(getch())=='A')
+				if (toupper(getch())=='A') // toupper() converts lowercase letters to uppercase
 				{
 					printf("\n\n\t\tCorrect!!!");countr++;getch();
 					break;
@@ -444,15 +451,17 @@ void startGame() {
  */
 
 void rules() {
+	system("cls");
 	
 	printf("\n\n\t\t\t\t RULES \t\t\t");
-	printf("\n********************************************************************************\n");
-	printf("\n A question will be displayed with 4 options\n\n Press the key (A/B/C/D) corresponding to the correct answer according to you.\n\n For every right answer, you earn $100,000.\n\n If your answer is wrong, the game ends.\n\n Answer maximum number of questions correctly to achieve highest scores and\n become a millionaire\n");
-	printf("\n********************************************************************************\n\n\n");
+	printf("\n\t\t_______________________________________________\n\n");
+	printf("\n > A question will be displayed with 4 options\n\n > Press the key (A/B/C/D) corresponding to the correct answer according to you.\n\n > For every right answer, you earn $100,000.\n\n > If your answer is wrong, the game ends.\n\n > Answer maximum number of questions correctly to achieve highest scores and\n become a millionaire.\n");
+	printf("\t\t____________________________________________________\n\n\n\n\n");
 	
-	printf("Press 0 to return to the main menu\n");
-	printf("Press 1 to start the game\n");
-	printf("Press 2 to exit the game\n");
+	
+	printf("Press 0 to return to the main menu\n"); //displays the menu page
+	printf("Press 1 to start the game\n"); //starts the game
+	printf("Press 2 to exit the game\n"); // quits the game
 	
 	short int i; //variable to select one of the three choices above
 	scanf("%hd",&i);
