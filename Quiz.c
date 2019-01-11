@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include <conio.h>
 #include <ctype.h>
 
@@ -15,6 +16,7 @@ void welcome();
 void menu();
 void startGame();
 void rules();
+
 
 
 /*----------------------------------
@@ -35,7 +37,7 @@ int main() {
 
 
 void welcome() {
-	char name;
+	char name[20];
 	printf("\t\t__________________________________________\n");
 	printf("\t\t__________________________________________\n");
 	printf("\n\t\t\t\t   WELCOME \t\t\t");
@@ -47,54 +49,51 @@ void welcome() {
 	printf("\n\n\t\t\tWHO WANTS TO BE A MILLIONAIRE\n");
 	printf("\t\t___________________________________________\n");
 	
-	printf("\n\n\n\n\n\n\n\n\n\n\n  ENTER YOUR NAME  :  ");
+	printf("\n\n\n\n\n\n\n\n\n\n ENTER YOUR NAME  :  ");
+	scanf("%s",&name);
 	
-	scanf("%c", &name); //saves name
 	menu();
 }
-
-
-/*-----------------------------------
- * Menu Screen
- *-----------------------------------
- */
-
 void menu() {
-	system("CLS"); //clears the screen
+	system("CLS");
 
-	printf("\n\n\n\n\t1. START GAME\t\n"); 
-	printf("\n\t2.RULES\t\n");
-	printf("\n\t3. QUIT\t\n");
+	printf("\n\n\t\t\t\tMENU PAGE\n");
+	printf("\t\t___________________________________________\n");
+		
+	printf("\n\n\n\n\t\t\t1. START GAME\t\n"); 
+	printf("\n\t\t\t2. RULES\t\n");
+	printf("\n\t\t\t3. QUIT\t\n");
 	
-	printf("\n\n\n\n\n\nEnter your choice : ");
+	printf("\n\n\n\n\n\n\n\n\n\n\n Enter your choice : ");
 	short int choice; //variable to select one of the three choices above
 	scanf("%hd", &choice);
 	
 	switch(choice) {
-		case 1:
-			startGame(); //starts the game
+		case 1 :
+			startGame();
 			break;
 			
-		case 2:
-			rules(); //shows the rules
+		case 2 :
+			rules();
 			break;
 		
-		case 3:
-			system("cls"); //quits the program
+		case 3 :
+			system("cls");
 			return;
 			break;
 		
 		default :
 			menu(); //switch case will keep on opening the menu page until the user puts a valid input
+		
 	}
 }
 
 
-/*-----------------------------------
- * Choice 1 = starts the game
- *-----------------------------------
+/*--------------------------------
+ * choice 1 = starts the game
+ *--------------------------------
  */
-
+ 
 void startGame() {
 	int i, r, countr;
 	float score;
@@ -109,7 +108,7 @@ void startGame() {
 				printf("\n\n\n Which is the longest River in the world?");
 				printf("\n\n  A.Nile\t\tB.Koshi\n\n  C.Ganga\t\tD.Amazon\n\n");
 		
-				if (toupper(getch())=='A') // toupper() converts lowercase letters to uppercase
+				if (toupper(getch())=='A')
 				{
 					printf("\n\n\t\tCorrect!!!");countr++;getch();
 					break;
@@ -407,6 +406,52 @@ void startGame() {
 				   	printf("\n\nWrong!!! The correct answer is B.Valves");getch();goto score;
 		       		break;
 				}
+
+			case 21:
+				printf("\n\n\nOzone plate is being destroyed regularly because of____ ?");
+				printf("\n\nA.L.P.G\t\tB.Nitrogen\n\nC.Methane\t\tD. C.F.C");
+		
+				if (toupper(getch())=='D')
+				{
+					printf("\n\nCorrect!!!");countr++; getch();
+					break;
+				}
+				else
+		    	{
+					printf("\n\nWrong!!! The correct answer is D. C.F.C");getch();goto score;
+		    		break;
+				}
+
+			case 22:
+				printf("\n\n\n Who won the Women's Australian Open Tennis in 2007?");
+				printf("\n\n  A.Martina Hingis\t\tB.Maria Sarapova\n\n  C.Kim Clijster\t\tD.Serena Williams");
+				
+				if (toupper(getch())=='D')
+				{
+					printf("\n\n\t\tCorrect!!!");countr++; getch();
+					break;
+				}
+				else
+		       	{
+				   	printf("\n\n\t\tWrong!!! The correct answer is D.Serena Williams");getch();goto score;
+		       		break;
+				}
+
+			case 23:
+				printf("\n\n\n Which film was awarded the Best Motion Picture at Oscar in 2010?");
+				printf("\n\n  A.The Secret in their Eyes\t\tB.Shutter Island\n\n  C.The King's Speech\t\tD.The Reader");
+				
+				if (toupper(getch())=='C')
+				{
+					printf("\n\n\t\tCorrect!!!");countr++; getch();
+					break;
+				}
+				else
+		       	{
+				   	printf("\n\n\t\tWrong!!! The correct answer is C.The King's Speech");getch();goto score;
+		      		break;
+				}
+			}
 		}
 	score: //variable score defined
     
@@ -416,7 +461,7 @@ void startGame() {
 	if(score>0.00 && score<1000000)
 	{
 	   printf("\n\n\t\t**************** CONGRATULATION *****************");
-	     printf("\n\t You won $%.2f",score);goto go;}
+	     printf("\n\n\t\t\t You won $%.2f\n",score);goto go;}
 
 	else if(score==1000000.00)
 	{
@@ -434,24 +479,26 @@ void startGame() {
 
 	go: //variable go defined
 	
-	puts("\n\n Press Y if you want to play again"); //restarts the game
-	puts(" Press any key if you want to go main menu");
+	puts("\n\n\n\n\n\n\n\n\n\n Press Y if you want to play again");
+	puts("\n Press any key if you want to go main menu");
 	if (toupper(getch())=='Y')
 		startGame();
 	else
 	{
+		// enters score
 		menu();
 	}
-}	
+}
 
 
-
-/*-----------------------------------
- * Choice 2 = shows the game rules
- *-----------------------------------
+/*-------------------------------------------
+ * choice 2 = tells the rules of the game
+ *-------------------------------------------
  */
-
+ 
+ 
 void rules() {
+	
 	system("cls");
 	
 	printf("\n\n\t\t\t\t RULES \t\t\t");
@@ -469,11 +516,11 @@ void rules() {
 	
 	switch(i) {
 		case 0 :
-			menu(); //displays the menu screen again
+			menu();
 			break;
 		
 		case 1 :
-			startGame(); //starts the game
+			startGame();
 			break;
 		
 		case 2:
@@ -485,5 +532,3 @@ void rules() {
 			rules(); //switch will keep on opening the rules page unless you enter a valid option
 	}
 }
-
-
